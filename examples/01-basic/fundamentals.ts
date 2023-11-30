@@ -1,10 +1,11 @@
 // TypeScript: Fundamentals
 
 // Basic Types
-let isDone: boolean = false;
-let decimal: number = 6;
-isDone = 3;
-
+// let isDone: boolean = false;
+// let decimal: number = 6;
+// isDone = 3;
+// isDone = "oliver";
+// isDone = false;
 // Tuple
 // let arr: [number, string] = [1, "a"]; // arr must be an array of number and string, where the first element is a number and the second element is a string
 // arr = [2, "b"];
@@ -12,12 +13,12 @@ isDone = 3;
 // arr = ["a", 2];
 
 // Union
-// let union: number | string = 1;
+// let union: number | string | boolean = 1;
 // union = "a";
 // union = true;
 
 // special types
-//any
+// any
 // let anyType: any = 1; // any Type can be any type
 // anyType = "a";
 // anyType = true;
@@ -26,11 +27,11 @@ isDone = 3;
 
 // let value: unknown = 10;
 
-// Error: Object is of type 'unknown'.
-// Need a type assertion or type guard to access properties.
-// console.log(value.property);
+// // Error: Object is of type 'unknown'.
+// // Need a type assertion or type guard to access properties.
+// // console.log(value.property);
 
-// Type assertion is required to tell TypeScript about the type.
+// // Type assertion is required to tell TypeScript about the type.
 // if (typeof value === "number") {
 //   let numberValue: number = value; // No error now
 // }
@@ -45,48 +46,48 @@ isDone = 3;
 // };
 
 // const warnUserNotVoid = (): void => {
-//   return "This is my warning message"; // Error: Type 'string' is not assignable to type 'void', because the function is not supposed to return anything
+//   // Error: Type 'string' is not assignable to type 'void', because the function is not supposed to return anything
+//   return "This is my warning message";
 // };
 
 // Type
 
 // type Name = string;
-// const name2: Name = 1;
+// const name2: Name = "";
 // const name3 = "Maria";
 
 // type Status = "loading" | "success" | "error";
 // const requestStatus: Status = "success";
 
-// type Admin = "james" | "john" | "peter";
+// type Admin = "james" | "john" | "peter" | "maria";
 // let admins: Admin[] = ["james", "john", "peter"];
 // admins.push("maria");
 
 // Interface
 
-// interface BasicPerson {
-//   name: string;
-//   age: number;
-// }
+interface BasicPerson {
+  name: string;
+  age: number;
+}
 
-// interface Address {
-//   street: string | undefined; //  it can be undefined or string but must be defined as undefined (sorry, I don't know how to explain it better)
-//   city?: string; // ? means optional property, it can be not defined
-// }
+ interface Address {
+  street: string | undefined; //  it can be undefined or string but must be defined as undefined (sorry, I don't know how to explain it better)
+  city?: string; // ? means optional property/key, it can be not defined
+}
 
-// interface Person extends BasicPerson {
-//   job: string;
-//   address: Address;
-// }
+interface Person extends BasicPerson {
+  job: string;
+  address: Address;
+}
 
-// const person: Person = {
-//   name: "James",
-//   age: 25,
-//   job: "developer",
-//   address: {
-//     // street: "123",
-//     // city: "London",
-//   },
-// };
+const person: Person = {
+  name: "James",
+  age: 25,
+  job: "developer",
+  address: {
+    street: undefined,
+  },
+};
 
-// console.log("person.address.city:", person.address.city);
-// console.log("person.address.street:", person.address.street);
+console.log("person.address.city:", person.address.city);
+console.log("person.address.street:", person.address.street);
