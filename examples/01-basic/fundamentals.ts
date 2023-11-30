@@ -36,7 +36,7 @@
 //   let numberValue: number = value; // No error now
 // }
 
-//void
+// void
 // let voidType: void = undefined;
 // voidType = null;
 
@@ -70,7 +70,7 @@ interface BasicPerson {
   age: number;
 }
 
- interface Address {
+interface Address {
   street: string | undefined; //  it can be undefined or string but must be defined as undefined (sorry, I don't know how to explain it better)
   city?: string; // ? means optional property/key, it can be not defined
 }
@@ -86,6 +86,7 @@ const person: Person = {
   job: "developer",
   address: {
     street: undefined,
+    city: "berlin",
   },
 };
 

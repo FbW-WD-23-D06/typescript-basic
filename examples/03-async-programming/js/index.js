@@ -1,5 +1,6 @@
 const fetchData = async (endpoint) => {
   try {
+    // const API_URL = `https://jsonplaceholder.typicode.com/${endpoint}`;
     const API_URL = `https://jsonplaceholder.typicode.com/${endpoint}`;
     const response = await fetch(API_URL);
     const data = await response.json();
@@ -11,6 +12,6 @@ const fetchData = async (endpoint) => {
 };
 
 fetchData("users");
-fetchData("james");
-fetchData(["persons"]);
-fetchData(12);
+fetchData("james"); //!
+fetchData(["persons"]); //!
+fetchData(12); //!
